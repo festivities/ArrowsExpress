@@ -21,10 +21,12 @@ int main(void){
     Sleep(3000);
     system("cls");
 
-    // increment every successful booking
+    // increment every successful booking, decrement every cancelled booking
     unsigned int ticketCount = 0;
     // must be a value between 0 and 23, below 11 being AM and above 11 being PM 
     unsigned int departureTime = 4;
+    // decrement every successful booking, increment every cancelled booking
+    unsigned int numberOfSeats = 14;
 
     // must be a value between 1 and 5
     unsigned int choice = 0;
@@ -69,18 +71,87 @@ int main(void){
             while(getchar() != '\n');
             displayMenu();
         }
+        while(getchar() != '\n');
 
         switch(choice){
             case 1:
+                bookTrip(&seat1Taken,
+                         &seat1ID,
+                         &seat2Taken,
+                         &seat2ID,
+                         &seat3Taken,
+                         &seat3ID,
+                         &seat4Taken,
+                         &seat4ID,
+                         &seat5Taken,
+                         &seat5ID,
+                         &seat6Taken,
+                         &seat6ID,
+                         &seat7Taken,
+                         &seat7ID,
+                         &seat8Taken,
+                         &seat8ID,
+                         &seat9Taken,
+                         &seat9ID,
+                         &seat10Taken,
+                         &seat10ID,
+                         &seat11Taken,
+                         &seat11ID,
+                         &seat12Taken,
+                         &seat12ID,
+                         &seat13Taken,
+                         &seat13ID,
+                         &seat14Taken,
+                         &seat14ID,
+                         departureTime,
+                         &numberOfSeats,
+                         &ticketCount);
                 break;
             case 2:
+                bookCancel(&seat1Taken,
+                           &seat1ID,
+                           &seat2Taken,
+                           &seat2ID,
+                           &seat3Taken,
+                           &seat3ID,
+                           &seat4Taken,
+                           &seat4ID,
+                           &seat5Taken,
+                           &seat5ID,
+                           &seat6Taken,
+                           &seat6ID,
+                           &seat7Taken,
+                           &seat7ID,
+                           &seat8Taken,
+                           &seat8ID,
+                           &seat9Taken,
+                           &seat9ID,
+                           &seat10Taken,
+                           &seat10ID,
+                           &seat11Taken,
+                           &seat11ID,
+                           &seat12Taken,
+                           &seat12ID,
+                           &seat13Taken,
+                           &seat13ID,
+                           &seat14Taken,
+                           &seat14ID,
+                           departureTime,
+                           &numberOfSeats,
+                           &ticketCount);
                 break;
             case 3:
+                system("cls");
+                displayBus(seat1Taken, seat1ID, seat2Taken, seat2ID, seat3Taken, seat3ID, seat4Taken, seat4ID,
+                        seat5Taken, seat5ID, seat6Taken, seat6ID, seat7Taken, seat7ID, seat8Taken, seat8ID,
+                        seat9Taken, seat9ID, seat10Taken, seat10ID, seat11Taken, seat11ID, seat12Taken, seat12ID,
+                        seat13Taken, seat13ID, seat14Taken, seat14ID);
                 displaySchedule(departureTime);
                 break;
             case 4:
                 updateDepartureTime(&departureTime);
                 // as departure time is updated, commit a sin by resetting all seat values manually
+                numberOfSeats = 14;
                 seat1Taken = false;
                 seat1ID = 0;
                 seat2Taken = false;
@@ -116,7 +187,9 @@ int main(void){
         system("cls");
     } while(choice != 5);
 
-    system("cls"); printf("Stored runtime data are discarded as this program closes.\n"); Sleep(3000);
+    system("cls");
+    printf("There were a total of %u successful bookings.\n"
+           "Stored runtime data are discarded as this program closes.\n\n", ticketCount); Sleep(4000);
 
     return 0;
 }

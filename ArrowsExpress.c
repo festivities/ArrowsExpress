@@ -4,7 +4,7 @@
 #include "helpers.h"
 
 int main(void){
-    // all calls of this function flush the terminal, Windows only
+    // all calls of this function with this parameter will flush the terminal, Windows only
     system("cls");
     printf("$$___$$___________$$__________________________________\n"
            "$$___$$___________$$__________________________________\n"
@@ -29,6 +29,36 @@ int main(void){
     // must be a value between 1 and 5
     unsigned int choice = 0;
 
+    // arrays and structs are unfortunately not allowed, therefore hardcode all seat values manually
+    bool seat1Taken = false;
+    unsigned int seat1ID = 0;
+    bool seat2Taken = false;
+    unsigned int seat2ID = 0;
+    bool seat3Taken = false;
+    unsigned int seat3ID = 0;
+    bool seat4Taken = false;
+    unsigned int seat4ID = 0;
+    bool seat5Taken = false;
+    unsigned int seat5ID = 0;
+    bool seat6Taken = false;
+    unsigned int seat6ID = 0;
+    bool seat7Taken = false;
+    unsigned int seat7ID = 0;
+    bool seat8Taken = false;
+    unsigned int seat8ID = 0;
+    bool seat9Taken = false;
+    unsigned int seat9ID = 0;
+    bool seat10Taken = false;
+    unsigned int seat10ID = 0;
+    bool seat11Taken = false;
+    unsigned int seat11ID = 0;
+    bool seat12Taken = false;
+    unsigned int seat12ID = 0;
+    bool seat13Taken = false;
+    unsigned int seat13ID = 0;
+    bool seat14Taken = false;
+    unsigned int seat14ID = 0;
+
     do{
         displayMenu();
 
@@ -46,9 +76,39 @@ int main(void){
             case 2:
                 break;
             case 3:
+                displaySchedule(departureTime);
                 break;
             case 4:
                 updateDepartureTime(&departureTime);
+                // as departure time is updated, commit a sin by resetting all seat values manually
+                seat1Taken = false;
+                seat1ID = 0;
+                seat2Taken = false;
+                seat2ID = 0;
+                seat3Taken = false;
+                seat3ID = 0;
+                seat4Taken = false;
+                seat4ID = 0;
+                seat5Taken = false;
+                seat5ID = 0;
+                seat6Taken = false;
+                seat6ID = 0;
+                seat7Taken = false;
+                seat7ID = 0;
+                seat8Taken = false;
+                seat8ID = 0;
+                seat9Taken = false;
+                seat9ID = 0;
+                seat10Taken = false;
+                seat10ID = 0;
+                seat11Taken = false;
+                seat11ID = 0;
+                seat12Taken = false;
+                seat12ID = 0;
+                seat13Taken = false;
+                seat13ID = 0;
+                seat14Taken = false;
+                seat14ID = 0;
                 break;
             default: break;
         }

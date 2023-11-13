@@ -22,6 +22,10 @@ extern void AMPM(const unsigned int time, char *(result[10]));
 
 extern void updateDepartureTime(unsigned int *const departureTime);
 
-inline bool lagunaManila(const int departureTime){ return departureTime % 2; }
+inline bool lagunaManila(const unsigned int departureTime){ return departureTime % 2; }
+
+extern const char *schedCalc(const unsigned int targetTime, const unsigned int departureTime);
+
+extern void displaySchedule(const unsigned int departureTime);
 
 #endif

@@ -18,7 +18,7 @@ inline void displayMenu(){
            "-------------------------------------------------------\n");
 }
 
-extern void AMPM(const unsigned int time, char *(result[10]));
+extern void AMPM(const unsigned int time, char (*result)[10]);
 
 extern void updateDepartureTime(unsigned int *const departureTime);
 

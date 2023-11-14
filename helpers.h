@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <windows.h>
 
-inline void displayMenu(){
+static inline void displayMenu(){
     printf("-------------------------------------------------------\n"
            "|                                                     |\n"
            "|                        MENU                         |\n"
@@ -22,7 +22,7 @@ extern void AMPM(const unsigned int time, char (*result)[10]);
 
 extern void updateDepartureTime(unsigned int *const departureTime);
 
-inline bool manilaLaguna(const unsigned int departureTime){ return departureTime % 2; }
+static inline bool manilaLaguna(const unsigned int departureTime){ return departureTime % 2; }
 
 extern void displayBus(const bool seat1Taken,
                        const unsigned int seat1ID,
